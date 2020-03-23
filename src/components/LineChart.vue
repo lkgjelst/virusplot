@@ -10,8 +10,17 @@ export default {
     data: function() {
         return{
             labels: ['Tested', 'Positive', 'Deaths'],
-            chartdata: [40,20,30]
+            chartdata: [40,20,30],
+            height: 300,
         };
+    },
+    computed: {
+        lineStyles() {
+            return {
+                height: '${this.height}px',
+                position: 'relative'
+            }
+        }
     },
     mounted () {
         this.renderChart(this.chartdata, this.options)
